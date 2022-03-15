@@ -1,13 +1,24 @@
-int score = 80;
+int score = 80; //Creates a new integer called score with a value of 80
 
-String result;
+String result; //Creates a new string called result with no current value
 
-if (score == 80) {
-	result = "You passed!";
-} else if (score > 80) {
-	result = "You did great!";
-} else {
-	result = "You did not pass. Try again!";
+if (score == 80) { //an if statement this executes if score is equal to 80
+	result = "You passed!"; //sets result to "You passed!"
+} else if (score > 80) { //an else if statement this executes if score is greater than 80 AND the previous if statement did not execute
+	result = "You did great!"; //sets result to ""You did great!"
+} else { //an else statement this executes only if the previous if and else if statements did not ecexute
+	result = "You did not pass. Try again!"; //sets result to "You did not pass. Try again!"
 }
 
-System.out.println(result);
+System.out.println(result); //writes the stored value in result to the console
+
+
+
+/*
+Summary: This proogram creates an integer called score and a string called
+result. Then the program compares score to 80. The result is passing if score
+is equal to 80. The result is great if the score is greater than 80. The
+reuslt is not passing for any other value of score. The program then prints
+what the result was. In this case, the value of score is 80 so the program
+will print "You Passed!"
+*/
