@@ -1,24 +1,31 @@
-public class Food {
-	public String name;
-	public String type;
+public class Food { //declares a class called Food
+	public String name; //class property name is a string and is public
+	public String type; //class property type is a string and is public
 
-	public Food(String name, String type) {
-		this.name = name;
-		this.type = type;
+	public Food(String name, String type) { //constructor to initialize an object of the class
+		this.name = name; //set the name property of this object to name
+		this.type = type; //set the type property of this object to type
 	}
 
-	public void cook() {
-		if (!name.contains("cooked")) {
-			name = "cooked " + name;
+	public void cook() { //class method cook is public and does not return anything
+		if (!name.contains("cooked")) { //if statement executes if the name property 
+of the object does not include "cooked"
+			name = "cooked " + name; //concatenates cooked to the name property
 		}
 	}
 }
 
-public class Main {
-	public static void main(String[] args) {
-		Food myFood = new Food("potato", "vegetable");
-		myFood.cook();
+public class Main { //main class (program execution is here)
+	public static void main(String[] args) { //main function (program execution begins here)
+		Food myFood = new Food("potato", "vegetable"); //declares a new object of Food
+		myFood.cook(); //calls the cook method for this object
 
-		System.out.println(myFood.name);
+		System.out.println(myFood.name); //writes the name of the food to the terminal
 	}
 }
+/*
+This program sets up a simple class called Food which has attributes name and
+type. The program begins in the main function and creates a Food object using
+potato for the name and vegetable for the type. After that, it calls the cook
+method for that object and then prints the name to the terminal.
+*/
