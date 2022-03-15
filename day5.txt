@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>Daily Code Review</title>
+	</head>
+	<body>
+		<h1>Cook your food!</h1>
+		<form action="http://localhost:8080/cook">
+			<label for="foodName">Food Name:</label>
+			<input id="foodName" name="foodName" type="text">
+			<br>
+			<button type="submit">Submit</button>
+		</form>
+	</body>
+</html>
+
+public static void main(String[] args) {
+	Javalin app = Javalin.create();
+	app.start();
+
+	app.get("cook", ctx -> {
+		String foodSent = ctx.formParam("foodName");
+		String cookedFood = "cooked " + foodSent;
+		ctx.result("Here's your food! <br>" + cookedFood);
+	});
+}

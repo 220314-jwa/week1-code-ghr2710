@@ -1,0 +1,12 @@
+public class Main {
+	public static void main(String[] args) {
+		Javalin app = Javalin.create();
+
+		app.start();
+
+		app.get("foods", ctx -> {
+			Food myFood = new Food("carrots", "vegetable");
+			ctx.result("You got: " + myFood.name);
+		});
+	}
+}
