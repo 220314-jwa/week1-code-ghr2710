@@ -1,52 +1,76 @@
-public static void main(String[] args) {
-	String[] foodTypes = getFoodTypes();
-	String myType = foodTypes[2];
+public static void main(String[] args) { //this is a method called main public means it
+can be used everywhere in the program, static means it is its won thing not an
+instance of something else, void means it does not return any values. This
+method takes args (the name for the list of command line string arguments) as
+its input
+	String[] foodTypes = getFoodTypes(); //create an array of strings
+called foodTypes which is then set to the array returned from the method getFoodTypes
+	String myType = foodTypes[2]; //creates a sting called myType with
+whichever value is 3rd in the array (array index starts at 0)
 
-	String[] foodsOfMyType = getFoodsByType(myType);
+	String[] foodsOfMyType = getFoodsByType(myType); //creates an array of
+strings called foodsOfMyType set to the array returned from the method getFoodsByType
 	
-	for (String food : foodsOfMyType) {
-		System.out.println(food);
+	for (String food : foodsOfMyType) { //for loop, will execute for each
+item in foodsOfMyType
+		System.out.println(food); //writes the value of food to the
+console
 	}
 }
 
-public static String[] getFoodTypes() {
-	String[] foodTypes = {"breakfast","lunch","dinner","dessert","snack"};
-	return foodTypes;
+public static String[] getFoodTypes() { //this is a method called getFoodTypes that returns an
+array of strings
+	String[] foodTypes = {"breakfast","lunch","dinner","dessert","snack"}; //creates an array of strings called foodTypes containing the values
+"breakfast", "lunch", "dinner", "dessert" and "snack"
+	return foodTypes; //returns the array of strings called foodTypes
 }
 
-public static String[] getFoodsByType(String type) {
-	String[] foods = new String[3];
+public static String[] getFoodsByType(String type) { //this is a method that
+returns an array of strings. It takes a single argument of type string
+	String[] foods = new String[3]; //creates an array of strings called
+foods. This array is has space declared for 3 values
 
-	switch(type) {
-	case "breakfast":
-		foods[0] = "pancakes";
-		foods[1] = "cereal";
-		foods[2] = "omelette";
-		break;
-	case "lunch":
-		foods[0] = "sandwich";
-		foods[1] = "salad";
-		foods[2] = "soup";
-		break;
-	case "dinner":
-		foods[0] = "curry";
-		foods[1] = "stir fry";
-		foods[2] = "burger";
-		break;
-	case "dessert":
-		foods[0] = "cake";
-		foods[1] = "ice cream";
-		foods[2] = "candy";
-		break;
-	case "snack":
-		foods[0] = "chips";
-		foods[1] = "apple";
-		foods[2] = "samosa";
-		break;
-	default:
+	switch(type) { //a switch statement, this takes the string type and
+compares it to the cases. If it does not match any cases the default case will execute
+	case "breakfast": //will execute if type matches this case
+		foods[0] = "pancakes"; //set the first item of foods to "pancakes"
+		foods[1] = "cereal"; //set the second item of foods to "cereal"
+		foods[2] = "omelette"; // set the third item of foods to "omlette"
+		break; //break from switch statement
+	case "lunch": //will execute if ttype matches this case
+		foods[0] = "sandwich"; //set the first item of foods to "sandwich"
+		foods[1] = "salad"; //set the second item of foods to "salad"
+		foods[2] = "soup"; //set the third item of foods to "soup"
+		break; //break from switch statement
+	case "dinner": //will execute if type matches this case
+		foods[0] = "curry"; //set the first item of foods to "curry"
+		foods[1] = "stir fry"; //set the second item of foods to "stir fry"
+		foods[2] = "burger"; //set the third item of foods to "burger"
+		break; //break from switch statement
+	case "dessert": //will execute if type matches this case
+		foods[0] = "cake"; //set the first item of foods to "cake"
+		foods[1] = "ice cream"; //set the second item of foods to "ice cream"
+		foods[2] = "candy"; //set the third item of foods to "candy"
+		break; //break from switch statement
+	case "snack": //will execute if type matches this case
+		foods[0] = "chips"; //set the first item of foods to "chips"
+		foods[1] = "apple"; //set the second item of foods to "apple"
+		foods[2] = "samosa"; //set the third item of foods to "samosa"
+		break; //break from switch statement
+	default: //executes if type does not match any of the above cases
 		// add your own
-		break;
+		foods[0] = "rice" //set the first item of foods to "rice"
+		foods[1] = "corn" //set the second item of foods to "corn"
+		foods[2] = "potato" //set the third item of foods to "potato"
+		break; //break from switch statement
 	}
 
-	return foods;
+	return foods; //return the array of strings called foods
 }
+/*
+This program executes the main method by default when run. First it receives
+an array of strings from the method getFoodTypes. Then it selects an item from
+that list and feeds it into getFoodsByType to receive an array of foods
+depending on which type was used as input. Then, it prints the value for each item in the foods
+array
+*/
