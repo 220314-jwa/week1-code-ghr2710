@@ -14,13 +14,13 @@
 </html> //End of html code
 
 public static void main(String[] args) { //Main class program execution is in this class
-	Javalin app = Javalin.create(); //Creates a javalin app
-	app.start(); //Starts the app
+	Javalin app = Javalin.create(); //Creates a javalin object
+	app.start(); //Starts the app listening for HTTP requests
 
-	app.get("cook", ctx -> { //Sends request to html page
+	app.get("cook", ctx -> { //Listens for GET reequests from a page ending in "cook"
 		String foodSent = ctx.formParam("foodName"); //Gets a foodName from html page
 		String cookedFood = "cooked " + foodSent; //Adds "cooked" to the food name
-		ctx.result("Here's your food! <br>" + cookedFood); //prints to terminal
+		ctx.result("Here's your food! <br>" + cookedFood); //prints result of GET request
 	});
 }
 
