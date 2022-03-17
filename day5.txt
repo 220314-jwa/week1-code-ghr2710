@@ -1,25 +1,31 @@
-<html>
-	<head>
-		<title>Daily Code Review</title>
-	</head>
-	<body>
+<html> //Start of html code
+	<head> //Start of header
+		<title>Daily Code Review</title> //Sets page title to Daily Code Review
+	</head> //End of header
+	<body> //Start of body
 		<h1>Cook your food!</h1>
-		<form action="http://localhost:8080/cook">
-			<label for="foodName">Food Name:</label>
-			<input id="foodName" name="foodName" type="text">
-			<br>
-			<button type="submit">Submit</button>
-		</form>
-	</body>
-</html>
+		<form action="http://localhost:8080/cook"> //Start of form on localhost port 8080
+			<label for="foodName">Food Name:</label> //Makes a text label
+			<input id="foodName" name="foodName" type="text"> //Accepts text input
+			<br> //Line break
+			<button type="submit">Submit</button> //Creates a button labeled "Submit"
+		</form> //End of form
+	</body> //End of body
+</html> //End of html code
 
-public static void main(String[] args) {
-	Javalin app = Javalin.create();
-	app.start();
+public static void main(String[] args) { //Main class program execution is in this class
+	Javalin app = Javalin.create(); //Creates a javalin app
+	app.start(); //Starts the app
 
-	app.get("cook", ctx -> {
-		String foodSent = ctx.formParam("foodName");
-		String cookedFood = "cooked " + foodSent;
-		ctx.result("Here's your food! <br>" + cookedFood);
+	app.get("cook", ctx -> { //Sends request to html page
+		String foodSent = ctx.formParam("foodName"); //Gets a foodName from html page
+		String cookedFood = "cooked " + foodSent; //Adds "cooked" to the food name
+		ctx.result("Here's your food! <br>" + cookedFood); //prints to terminal
 	});
 }
+
+/*
+This program creates an html page to input food names. Then it runs a javalin
+app to get the food name and add "cooked" to the food name. It then prints the
+cooked food name.
+*/
