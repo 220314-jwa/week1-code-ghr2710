@@ -1,17 +1,17 @@
 public class Main { //Main class, execution will be in this class
 	public static void main(String[] args) { //Main method, program beging execution in this method
-		Javalin app = Javalin.create(); //Creates an instance  of a Javalin app
+		Javalin app = Javalin.create(); //Creates a Javalin object
 
-		app.start(); //Starts the app
+		app.start(); //Starts the app listening for HTTP requests
 
-		app.get("foods", ctx -> { //Gets data from the foods program
+		app.get("foods", ctx -> { //listens for GET requests from a page ending in "foods"
 			Food myFood = new Food("carrots", "vegetable"); //Creates a new food object
-			ctx.result("You got: " + myFood.name); //The result of the get
+			ctx.result("You got: " + myFood.name); //Text result of the GET request
 		});
 	}
 }
 
 /*
-This Program creates an application that gets a food object from the foods program and
-prints the result of the get to the application
+This Program creates an application that listens for GET requests from a page
+ending in "foods" and prints the result of the get to the application
 */
